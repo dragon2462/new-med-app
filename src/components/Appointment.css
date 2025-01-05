@@ -1,0 +1,20 @@
+.appointment-setter {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .appointment-setter h2 {
+    color: #007bff;
+  }
+  
+  .appointment-setter .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .appointment-setter .btn-primary {
+    width: 100%;
+  }
+  
+  
