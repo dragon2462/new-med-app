@@ -1,8 +1,11 @@
 import './App.css';
-import React from 'react';
-import AppointmentSetter from './components/Appointment';
-import DoctorReviews from './components/Reviews';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Reviews from './components/Reviews';
 import Navbar from './pages/Navbar';
+import Appointments from './components/Appointment';
+import SignUp from './pages/Sign_Up';
+import Login from './pages/Login';
 
 const doctors = [
   { name: 'Dr. Alice Smith', specialty: 'Cardiology', location: 'New York' },
@@ -12,15 +15,24 @@ const doctors = [
 ];
 
 const App = () => {
+  useEffect(() => {
+    console.log('App component rendered');
+  }, []);
+
   return (
-    <div className="app">
-      <div className="header">
-        <Navbar/>
+    <Router>
+      <div className="app">
+        <div className="header">
+          <Navbar />
         </div>
-        <h1>Doctor Appointment App</h1>
-      <AppointmentSetter doctors={doctors} />
-      <DoctorReviews doctors={doctors} />
-    </div>
+        <Routes>
+          <Route path="/" element={''} />
+          <Route path="/appointments" element={<Appointments doctors={doctors} />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
