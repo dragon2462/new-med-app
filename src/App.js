@@ -6,6 +6,8 @@ import Navbar from './pages/Navbar';
 import Appointments from './components/Appointment';
 import SignUp from './pages/Sign_Up';
 import Login from './pages/Login';
+import Home from './Home';
+import Consultations from './components/Consultations';
 
 const doctors = [
   { name: 'Dr. Alice Smith', specialty: 'Cardiology', location: 'New York' },
@@ -26,10 +28,12 @@ const App = () => {
           <Navbar />
         </div>
         <Routes>
-          <Route path="/" element={''} />
+          <Route path="/" element={<Home/>} />
           <Route path="/appointments" element={<Appointments doctors={doctors} />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/consultation" element={<Consultations doctors={doctors} />} />
         </Routes>
       </div>
     </Router>

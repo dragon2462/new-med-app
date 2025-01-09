@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Sign_Up.css';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthContext';
 
 const SignUp = () => {
   const [role, setRole] = useState('');
@@ -9,11 +10,11 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { signUp } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Submit logic here
-    console.log({ role, name, phone, email, password });
+    signUp({ role, name, phone, email });
     navigate('/dashboard'); // Example navigation
   };
 
